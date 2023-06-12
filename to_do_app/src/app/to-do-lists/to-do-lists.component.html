@@ -1,21 +1,24 @@
-<table border="1">
-  <caption>
-    To do lists
-  </caption>
-  <tr>
-    <th>Descriptions</th>
-    <th>Target Date</th>
-    <th>Completed</th>
-  </tr>
-  <tr *ngFor="let item of todoList">
-    <td>
-      {{ item.descriptions }}
-    </td>
-    <td>
-      {{ item.targetDate | date : "short" }}
-    </td>
-    <td>
-      {{ item.isCompleted }}
-    </td>
-  </tr>
-</table>
+<div class="container">
+  <h1>My Todo's</h1>
+  <table class="table">
+    <caption>
+      To do lists
+    </caption>
+    <tr>
+      <th>Descriptions</th>
+      <th>Target Date</th>
+      <th>Completed</th>
+    </tr>
+    <tr *ngFor="let item of todoList">
+      <td>
+        {{ item.descriptions }}
+      </td>
+      <td>
+        {{ item.targetDate | date : "short" }}
+      </td>
+      <td>
+        {{ item.isCompleted }}
+      </td>
+    </tr>
+  </table>
+</div>

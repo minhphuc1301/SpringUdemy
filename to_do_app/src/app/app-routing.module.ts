@@ -1,3 +1,4 @@
+import { RouteGuardService } from './service/route-guard.service';
 import { ToDoListsComponent } from './to-do-lists/to-do-lists.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { WelcomeComponent } from './welcome/welcome.component';
@@ -17,11 +18,13 @@ const routes: Routes = [
     },
     {
         path: 'welcome/:name',
-        component: WelcomeComponent
+        component: WelcomeComponent,
+        canActivate: [RouteGuardService]
     },
     {
         path: 'todos',
-        component: ToDoListsComponent
+        component: ToDoListsComponent,
+        canActivate: [RouteGuardService]
     },
     {
         path: "**",

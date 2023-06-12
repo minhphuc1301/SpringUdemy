@@ -1,4 +1,10 @@
-Username :<input type="text" name="username" [(ngModel)]="this.username" />
+<h1>Login</h1>
 
-Password : <input type="password" name="password" [(ngModel)]="this.password" />
-<button (click)="checkLogin()">Login</button>
+<div class="">
+  <div>
+    Username :<input type="text" name="username" [(ngModel)]="this.username" />
+    Password :
+    <input type="password" name="password" [(ngModel)]="this.password" />
+  </div>
+  <button (click)="checkLogin()" class="btn btn-success">Login</button>
+</div>

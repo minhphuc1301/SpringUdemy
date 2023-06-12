@@ -1,3 +1,4 @@
+import { AuthenticationService } from './../service/authentication.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -7,14 +8,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  username: string | undefined;
-  password: string | undefined;
-  constructor(private router: Router) { }
+  username: string = '';
+  password: string = '';
+  constructor(private router: Router, private authenticationService: AuthenticationService) { }
 
   ngOnInit(): void {
+    if (this.authenticationService.isUserLoggedIn()) {
+      this.router.navigate(['welcome', sessionStorage.getItem('user')])
+
+    }
   }
   checkLogin() {
-    if (this.username == 'admin@gmail.com' && this.password == '1') {
+    if (this.authenticationService.authenticate(this.username, this.password)) {
       this.router.navigate(['welcome', this.username])
     } else {
 

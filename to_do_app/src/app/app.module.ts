@@ -8,6 +8,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { FormsModule } from '@angular/forms';
 import { ToDoListsComponent } from './to-do-lists/to-do-lists.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { ToDoListsComponent } from './to-do-lists/to-do-lists.component';
     LoginComponent,
     WelcomeComponent,
     ErrorPageComponent,
-    ToDoListsComponent
+    ToDoListsComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
