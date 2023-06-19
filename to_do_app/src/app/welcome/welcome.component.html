@@ -1,1 +1,8 @@
 <div>Welcome {{ this.username }}</div>
+
+<div class="container">
+  <button (click)="getDataWithParam()" class="btn btn-success">
+    Get welcome message
+  </button>
+  <span *ngIf="this.message"> Your message is : {{ this.message }} </span>
+</div>

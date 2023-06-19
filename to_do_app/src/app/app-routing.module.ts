@@ -1,10 +1,10 @@
-import { RouteGuardService } from './service/route-guard.service';
 import { ToDoListsComponent } from './to-do-lists/to-do-lists.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { LoginComponent } from './login/login.component';
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
+import { RouteGuardService } from './service/route-guard-service/route-guard.service';
 
 const routes: Routes = [
     {
