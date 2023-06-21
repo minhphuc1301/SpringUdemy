@@ -11,6 +11,7 @@ import { ToDoListsComponent } from './to-do-lists/to-do-lists.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ToDoDetailComponent } from './to-do-detail/to-do-detail.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
     ErrorPageComponent,
     ToDoListsComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ToDoDetailComponent
   ],
   imports: [
     BrowserModule,

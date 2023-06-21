@@ -1,3 +1,4 @@
+import { ToDoDetailComponent } from './to-do-detail/to-do-detail.component';
 import { ToDoListsComponent } from './to-do-lists/to-do-lists.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { WelcomeComponent } from './welcome/welcome.component';
@@ -24,6 +25,11 @@ const routes: Routes = [
     {
         path: 'todos',
         component: ToDoListsComponent,
+        canActivate: [RouteGuardService]
+    },
+    {
+        path: 'todos/:id',
+        component: ToDoDetailComponent,
         canActivate: [RouteGuardService]
     },
     {

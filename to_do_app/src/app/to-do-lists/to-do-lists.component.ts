@@ -1,6 +1,8 @@
+import { TodoService } from './../service/todo-service/todo.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 export class Todo {
-  constructor(public id: number, public descriptions: string, public targetDate: Date, public isCompleted: boolean) {
+  constructor(public id: number, public description: string, public targetDate: Date, public done: boolean) {
 
   }
 }
@@ -12,14 +14,25 @@ export class Todo {
 
 
 export class ToDoListsComponent implements OnInit {
-  todoList = [
-    new Todo(1, 'Test 1', new Date(), true),
-    new Todo(2, 'Test 2', new Date(), false),
-    new Todo(3, 'Test 3', new Date(), true),
-  ]
-  constructor() { }
+  todoList: Todo[] = []
+  message: string = '';
+  constructor(private todoService: TodoService, private router: Router) { }
 
   ngOnInit(): void {
+    this.getAllTodo();
   }
 
+  getAllTodo() {
+    this.todoService.getAllTodo().subscribe(reponse => this.todoList = reponse)
+  }
+  deleteById(id: number) {
+    this.todoService.deleteById(id).subscribe(response => {
+      alert(this.message.concat(`Delete todo with ID:${id} sucessfully`))
+      this.getAllTodo();
+    })
+  }
+  updateById(id: number) {
+    this.router.navigate(['/todos', id]);
+
+  }
 }
